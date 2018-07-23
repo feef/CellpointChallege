@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import Realm
 
 class Repository: Object {
     @objc dynamic private var id = UUID().uuidString
@@ -17,5 +18,12 @@ class Repository: Object {
     
     override static func primaryKey() -> String? {
         return "id"
+    }
+    
+    static func new(name: String, ownerName: String) -> Repository {
+        let repository = Repository()
+        repository.name = name
+        repository.ownerName = ownerName
+        return repository
     }
 }

@@ -14,11 +14,18 @@
 		48529ABE2105DDAC0033D140 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48529ABD2105DDAC0033D140 /* Assets.xcassets */; };
 		48529AC12105DDAC0033D140 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48529ABF2105DDAC0033D140 /* LaunchScreen.storyboard */; };
 		48529ACC2105F6050033D140 /* UserRepositories.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48529ACB2105F6050033D140 /* UserRepositories.graphql */; };
-		48529ACE2105FA3A0033D140 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529ACD2105FA3A0033D140 /* API.swift */; };
 		48529AD02105FB260033D140 /* OrganizationRepositories.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48529ACF2105FB260033D140 /* OrganizationRepositories.graphql */; };
 		48529AD32105FE1E0033D140 /* RepositoryDetails.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48529AD22105FE1E0033D140 /* RepositoryDetails.graphql */; };
 		48529AE421060F0B0033D140 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529AE321060F0B0033D140 /* Repository.swift */; };
 		48529AE6210611900033D140 /* RepositoryMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529AE5210611900033D140 /* RepositoryMetadata.swift */; };
+		48529AE9210613F40033D140 /* GetUserRepositoriesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529AE8210613F40033D140 /* GetUserRepositoriesOperation.swift */; };
+		48529AEB2106141D0033D140 /* ResultGeneratingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529AEA2106141D0033D140 /* ResultGeneratingOperation.swift */; };
+		48529AED2106145A0033D140 /* OperationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529AEC2106145A0033D140 /* OperationResult.swift */; };
+		48529AF0210614B30033D140 /* AsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529AEF210614B20033D140 /* AsynchronousOperation.swift */; };
+		48529AF42106175F0033D140 /* ApolloClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529AF32106175F0033D140 /* ApolloClient.swift */; };
+		48529AF721061E6B0033D140 /* GetOrganizationRepositoriesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529AF621061E6B0033D140 /* GetOrganizationRepositoriesOperation.swift */; };
+		48529AF921061ED00033D140 /* GetRepositoryDetailsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529AF821061ED00033D140 /* GetRepositoryDetailsOperation.swift */; };
+		48529AFB2106233D0033D140 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529AFA2106233D0033D140 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,11 +38,18 @@
 		48529AC02105DDAC0033D140 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48529AC22105DDAC0033D140 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48529ACB2105F6050033D140 /* UserRepositories.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UserRepositories.graphql; sourceTree = "<group>"; };
-		48529ACD2105FA3A0033D140 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		48529ACF2105FB260033D140 /* OrganizationRepositories.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = OrganizationRepositories.graphql; sourceTree = "<group>"; };
 		48529AD22105FE1E0033D140 /* RepositoryDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = RepositoryDetails.graphql; sourceTree = "<group>"; };
 		48529AE321060F0B0033D140 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		48529AE5210611900033D140 /* RepositoryMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryMetadata.swift; sourceTree = "<group>"; };
+		48529AE8210613F40033D140 /* GetUserRepositoriesOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserRepositoriesOperation.swift; sourceTree = "<group>"; };
+		48529AEA2106141D0033D140 /* ResultGeneratingOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultGeneratingOperation.swift; sourceTree = "<group>"; };
+		48529AEC2106145A0033D140 /* OperationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationResult.swift; sourceTree = "<group>"; };
+		48529AEF210614B20033D140 /* AsynchronousOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsynchronousOperation.swift; sourceTree = "<group>"; };
+		48529AF32106175F0033D140 /* ApolloClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloClient.swift; sourceTree = "<group>"; };
+		48529AF621061E6B0033D140 /* GetOrganizationRepositoriesOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOrganizationRepositoriesOperation.swift; sourceTree = "<group>"; };
+		48529AF821061ED00033D140 /* GetRepositoryDetailsOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRepositoryDetailsOperation.swift; sourceTree = "<group>"; };
+		48529AFA2106233D0033D140 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = ../API.swift; sourceTree = "<group>"; };
 		52CC7BBFEC853BB35DAF1957 /* Pods-CellpointChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CellpointChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CellpointChallenge/Pods-CellpointChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		ED89268D41EC1E3C09203C29 /* Pods-CellpointChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CellpointChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-CellpointChallenge/Pods-CellpointChallenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,14 +87,17 @@
 		48529AB52105DDAA0033D140 /* CellpointChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				48529AD12105FB8C0033D140 /* GraphQuerying */,
 				48529AB62105DDAA0033D140 /* AppDelegate.swift */,
-				48529AB82105DDAA0033D140 /* ViewController.swift */,
-				48529ABA2105DDAA0033D140 /* Main.storyboard */,
 				48529ABD2105DDAC0033D140 /* Assets.xcassets */,
-				48529ABF2105DDAC0033D140 /* LaunchScreen.storyboard */,
+				48529AF5210617C90033D140 /* Extensions */,
+				48529AD12105FB8C0033D140 /* GraphQuerying */,
 				48529AC22105DDAC0033D140 /* Info.plist */,
+				48529ABF2105DDAC0033D140 /* LaunchScreen.storyboard */,
+				48529ABA2105DDAA0033D140 /* Main.storyboard */,
 				48529AE7210612FE0033D140 /* Models */,
+				48529AF1210614BD0033D140 /* Operations */,
+				48529AF2210614C80033D140 /* Protocols */,
+				48529AB82105DDAA0033D140 /* ViewController.swift */,
 			);
 			path = CellpointChallenge;
 			sourceTree = "<group>";
@@ -88,10 +105,10 @@
 		48529AD12105FB8C0033D140 /* GraphQuerying */ = {
 			isa = PBXGroup;
 			children = (
-				48529ACD2105FA3A0033D140 /* API.swift */,
-				48529ACB2105F6050033D140 /* UserRepositories.graphql */,
+				48529AFA2106233D0033D140 /* API.swift */,
 				48529ACF2105FB260033D140 /* OrganizationRepositories.graphql */,
 				48529AD22105FE1E0033D140 /* RepositoryDetails.graphql */,
+				48529ACB2105F6050033D140 /* UserRepositories.graphql */,
 			);
 			path = GraphQuerying;
 			sourceTree = "<group>";
@@ -99,10 +116,46 @@
 		48529AE7210612FE0033D140 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				48529AEC2106145A0033D140 /* OperationResult.swift */,
+				48529AEE2106147B0033D140 /* RealmModels */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		48529AEE2106147B0033D140 /* RealmModels */ = {
+			isa = PBXGroup;
+			children = (
 				48529AE321060F0B0033D140 /* Repository.swift */,
 				48529AE5210611900033D140 /* RepositoryMetadata.swift */,
 			);
-			path = Models;
+			path = RealmModels;
+			sourceTree = "<group>";
+		};
+		48529AF1210614BD0033D140 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				48529AEF210614B20033D140 /* AsynchronousOperation.swift */,
+				48529AF621061E6B0033D140 /* GetOrganizationRepositoriesOperation.swift */,
+				48529AF821061ED00033D140 /* GetRepositoryDetailsOperation.swift */,
+				48529AE8210613F40033D140 /* GetUserRepositoriesOperation.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		48529AF2210614C80033D140 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				48529AEA2106141D0033D140 /* ResultGeneratingOperation.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		48529AF5210617C90033D140 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				48529AF32106175F0033D140 /* ApolloClient.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		4F50071DC5CED436BFD9EC5B /* Frameworks */ = {
@@ -256,11 +309,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48529AED2106145A0033D140 /* OperationResult.swift in Sources */,
+				48529AF921061ED00033D140 /* GetRepositoryDetailsOperation.swift in Sources */,
 				48529AB92105DDAA0033D140 /* ViewController.swift in Sources */,
-				48529ACE2105FA3A0033D140 /* API.swift in Sources */,
 				48529AE6210611900033D140 /* RepositoryMetadata.swift in Sources */,
+				48529AF42106175F0033D140 /* ApolloClient.swift in Sources */,
+				48529AE9210613F40033D140 /* GetUserRepositoriesOperation.swift in Sources */,
+				48529AF0210614B30033D140 /* AsynchronousOperation.swift in Sources */,
+				48529AEB2106141D0033D140 /* ResultGeneratingOperation.swift in Sources */,
 				48529AB72105DDAA0033D140 /* AppDelegate.swift in Sources */,
 				48529AE421060F0B0033D140 /* Repository.swift in Sources */,
+				48529AFB2106233D0033D140 /* API.swift in Sources */,
+				48529AF721061E6B0033D140 /* GetOrganizationRepositoriesOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

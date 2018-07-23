@@ -16,4 +16,11 @@ class RepositoryMetadata: Object {
     override static func primaryKey() -> String? {
         return "id"
     }
+    
+    static func new(id: String, repositoryDescription: String) -> RepositoryMetadata {
+        let metadata = RepositoryMetadata()
+        metadata.id = id
+        metadata.repositoryDescription = repositoryDescription
+        return metadata
+    }
 }
