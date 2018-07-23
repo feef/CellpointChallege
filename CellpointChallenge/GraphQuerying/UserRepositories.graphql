@@ -1,0 +1,13 @@
+query GetUserRepositories($name: String!) {
+  user(login: $name) {
+    name
+    repositories(first: 10) {
+      nodes {
+        name
+        owner {
+          login
+        }
+      }
+    }
+  }
+}

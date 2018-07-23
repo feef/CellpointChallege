@@ -1,0 +1,13 @@
+query GetOrganizationRepositories($name: String!) {
+  organization(login: $name) {
+    name
+    repositories(first: 10) {
+      nodes {
+        name
+        owner {
+          login
+        }
+      }
+    }
+  }
+}
