@@ -7,6 +7,5 @@ target 'CellpointChallenge' do
 
   # Pods for CellpointChallenge
   pod "Apollo", '~> 0.8.0'
-  pod 'OAuthSwift', '~> 1.2.2'
 
 end
