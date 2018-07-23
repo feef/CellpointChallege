@@ -17,6 +17,8 @@
 		48529ACE2105FA3A0033D140 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529ACD2105FA3A0033D140 /* API.swift */; };
 		48529AD02105FB260033D140 /* OrganizationRepositories.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48529ACF2105FB260033D140 /* OrganizationRepositories.graphql */; };
 		48529AD32105FE1E0033D140 /* RepositoryDetails.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48529AD22105FE1E0033D140 /* RepositoryDetails.graphql */; };
+		48529AE421060F0B0033D140 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529AE321060F0B0033D140 /* Repository.swift */; };
+		48529AE6210611900033D140 /* RepositoryMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529AE5210611900033D140 /* RepositoryMetadata.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		48529ACD2105FA3A0033D140 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		48529ACF2105FB260033D140 /* OrganizationRepositories.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = OrganizationRepositories.graphql; sourceTree = "<group>"; };
 		48529AD22105FE1E0033D140 /* RepositoryDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = RepositoryDetails.graphql; sourceTree = "<group>"; };
+		48529AE321060F0B0033D140 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		48529AE5210611900033D140 /* RepositoryMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryMetadata.swift; sourceTree = "<group>"; };
 		52CC7BBFEC853BB35DAF1957 /* Pods-CellpointChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CellpointChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CellpointChallenge/Pods-CellpointChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		ED89268D41EC1E3C09203C29 /* Pods-CellpointChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CellpointChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-CellpointChallenge/Pods-CellpointChallenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +80,7 @@
 				48529ABD2105DDAC0033D140 /* Assets.xcassets */,
 				48529ABF2105DDAC0033D140 /* LaunchScreen.storyboard */,
 				48529AC22105DDAC0033D140 /* Info.plist */,
+				48529AE7210612FE0033D140 /* Models */,
 			);
 			path = CellpointChallenge;
 			sourceTree = "<group>";
@@ -89,6 +94,15 @@
 				48529AD22105FE1E0033D140 /* RepositoryDetails.graphql */,
 			);
 			path = GraphQuerying;
+			sourceTree = "<group>";
+		};
+		48529AE7210612FE0033D140 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				48529AE321060F0B0033D140 /* Repository.swift */,
+				48529AE5210611900033D140 /* RepositoryMetadata.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		4F50071DC5CED436BFD9EC5B /* Frameworks */ = {
@@ -221,10 +235,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CellpointChallenge/Pods-CellpointChallenge-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Apollo/Apollo.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Apollo.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -240,7 +258,9 @@
 			files = (
 				48529AB92105DDAA0033D140 /* ViewController.swift in Sources */,
 				48529ACE2105FA3A0033D140 /* API.swift in Sources */,
+				48529AE6210611900033D140 /* RepositoryMetadata.swift in Sources */,
 				48529AB72105DDAA0033D140 /* AppDelegate.swift in Sources */,
+				48529AE421060F0B0033D140 /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,7 +408,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 239483289D;
 				INFOPLIST_FILE = CellpointChallenge/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Feef.Anthony.CellpointChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -404,7 +427,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 239483289D;
 				INFOPLIST_FILE = CellpointChallenge/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Feef.Anthony.CellpointChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

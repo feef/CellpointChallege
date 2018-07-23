@@ -7,5 +7,6 @@ target 'CellpointChallenge' do
 
   # Pods for CellpointChallenge
   pod "Apollo", '~> 0.8.0'
+  pod "RealmSwift", '~> 3.7.4'
 
 end
