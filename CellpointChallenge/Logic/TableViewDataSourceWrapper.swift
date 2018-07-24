@@ -13,6 +13,8 @@ class TableViewDataSourceWrapper<CellType: UITableViewCell, ModelType>: NSObject
     private let modelArrays: [[ModelType]]
     private let cellGenerator: AnyTableViewCellGenerator<CellType, ModelType>
     
+    // MARK: - Init
+    
     init(groupedModels: [(String?, [ModelType])], cellGenerator: AnyTableViewCellGenerator<CellType, ModelType>) {
         sectionTitles = groupedModels.map { $0.0 }
         self.modelArrays = groupedModels.map { $0.1 }

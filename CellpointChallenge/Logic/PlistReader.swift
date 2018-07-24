@@ -11,7 +11,7 @@ import Foundation
 struct PlistReader {
     static let privatePlistDictionary: [String: Any] = dictionaryContentsOfPlist(named: "Private")!
     
-    static func dictionaryContentsOfPlist(named fileName: String) -> [String: Any]? {
+    private static func dictionaryContentsOfPlist(named fileName: String) -> [String: Any]? {
         guard
             let fileURL = Bundle.main.url(forResource: fileName, withExtension: "plist"),
             let data = try? Data(contentsOf: fileURL),

@@ -22,6 +22,8 @@ class Repository: Object {
         return "id"
     }
     
+    // MARK: - Init
+    
     static func new(id: String, name: String, repositoryDescription: String?, ownerName: String, language: String, stargazersCount: Int) -> Repository {
         let repository = Repository()
         repository.id = id

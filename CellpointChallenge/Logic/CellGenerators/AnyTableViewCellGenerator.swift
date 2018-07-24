@@ -15,11 +15,15 @@ class AnyTableViewCellGenerator<CellType: UITableViewCell, ModelType> {
     private let _generateCell: GenerateCellBlock
     private let _decorateCell: DecorateCellBlock
     
+    // MARK: - Init
+    
     init(generateCell: @escaping GenerateCellBlock, decorateCell: @escaping DecorateCellBlock) {
         _generateCell = generateCell
         _decorateCell = decorateCell
     }
 }
+
+// MARK - TableViewCellGenerator
 
 extension AnyTableViewCellGenerator: TableViewCellGenerator {
     func generateCell() -> CellType {

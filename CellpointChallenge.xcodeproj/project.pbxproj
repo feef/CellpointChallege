@@ -160,8 +160,8 @@
 		48529AF2210614C80033D140 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				48529B0C2107308C0033D140 /* TableViewCellGenerator.swift */,
 				48529AEA2106141D0033D140 /* ResultGeneratingOperation.swift */,
+				48529B0C2107308C0033D140 /* TableViewCellGenerator.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";

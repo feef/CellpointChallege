@@ -10,6 +10,9 @@ import Foundation
 import Apollo
 
 extension ApolloClient {
+    
+    // MARK: - Init
+    
     static let shared: ApolloClient = {
         let configuration = URLSessionConfiguration.default
         configuration.httpAdditionalHeaders = ["Authorization": "Bearer \(AuthorizationValues.githubToken)"]

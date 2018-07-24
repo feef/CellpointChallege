@@ -13,8 +13,6 @@ class AuthorizationValues {
         static let plistName = "Private"
         static let githubTokenKey = "GithubAuthenticationToken"
     }
-    
-    private static let privatePlistDictionary = PlistReader.dictionaryContentsOfPlist(named: Constants.plistName)!
-    
-    static let githubToken = privatePlistDictionary[Constants.githubTokenKey] as! String
+        
+    static let githubToken = PlistReader.privatePlistDictionary[Constants.githubTokenKey] as! String
 }

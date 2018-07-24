@@ -9,6 +9,7 @@
 import UIKit
 
 struct RepositoryTableViewCellGenerator {
+    
     // MARK: - Any wrapper
     
     static let wrapped: AnyTableViewCellGenerator<UITableViewCell, Repository> = {
@@ -16,6 +17,8 @@ struct RepositoryTableViewCellGenerator {
         return AnyTableViewCellGenerator(generateCell: generator.generateCell, decorateCell: generator.decorateCell)
     }()
 }
+
+// MARK: - TableViewCellGenerator
 
 extension RepositoryTableViewCellGenerator: TableViewCellGenerator {
     func generateCell() -> UITableViewCell {

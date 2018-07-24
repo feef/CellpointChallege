@@ -9,6 +9,7 @@
 import UIKit
 
 struct StringTableViewCellGenerator {
+    
     // MARK: - Any wrapper
     
     static let wrapped: AnyTableViewCellGenerator<UITableViewCell, String> = {
@@ -16,6 +17,8 @@ struct StringTableViewCellGenerator {
         return AnyTableViewCellGenerator(generateCell: generator.generateCell, decorateCell: generator.decorateCell)
     }()
 }
+
+// MARK: - TableViewCellGenerator
 
 extension StringTableViewCellGenerator: TableViewCellGenerator {
     func generateCell() -> UITableViewCell {

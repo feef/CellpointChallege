@@ -15,11 +15,15 @@ class GetOrganizationRepositoriesOperation: AsynchronousOperation, ResultGenerat
     private let username: String
     private let organizationRepositoriesQuery: GetOrganizationRepositoriesQuery
     
+    // MARK: - Init
+    
     init(username: String, onComplete: @escaping Completion) {
         self.onComplete = onComplete
         self.username = username
         self.organizationRepositoriesQuery = GetOrganizationRepositoriesQuery(name: username)
     }
+    
+    // MARK: - Lifecycle
     
     override func start() {
         super.start()

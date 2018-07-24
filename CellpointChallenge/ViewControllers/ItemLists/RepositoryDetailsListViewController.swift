@@ -9,6 +9,7 @@
 import UIKit
 
 class RepositoryDetailsListViewController: ItemsListViewController<UITableViewCell, String> {
+    
     // MARK: - Init
     
     init(repository: Repository) {
