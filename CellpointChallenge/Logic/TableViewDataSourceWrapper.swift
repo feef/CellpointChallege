@@ -17,7 +17,7 @@ class TableViewDataSourceWrapper<CellType: UITableViewCell, ModelType>: NSObject
     
     init(groupedModels: [(String?, [ModelType])], cellGenerator: AnyTableViewCellGenerator<CellType, ModelType>) {
         sectionTitles = groupedModels.map { $0.0 }
-        self.modelArrays = groupedModels.map { $0.1 }
+        modelArrays = groupedModels.map { $0.1 }
         self.cellGenerator = cellGenerator
     }
     

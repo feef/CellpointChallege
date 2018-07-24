@@ -58,6 +58,6 @@ class RepositoriesListViewController: ItemsListViewController<UITableViewCell, R
             return
         }
         let repositoryDetailsListViewController = RepositoryDetailsListViewController(repository: repository)
-        self.navigationController?.pushViewController(repositoryDetailsListViewController, animated: true)
+        navigationController?.pushViewController(repositoryDetailsListViewController, animated: true)
     }
 }

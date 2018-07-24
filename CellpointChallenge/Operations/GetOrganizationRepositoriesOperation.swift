@@ -20,7 +20,7 @@ class GetOrganizationRepositoriesOperation: AsynchronousOperation, ResultGenerat
     init(username: String, onComplete: @escaping Completion) {
         self.onComplete = onComplete
         self.username = username
-        self.organizationRepositoriesQuery = GetOrganizationRepositoriesQuery(name: username)
+        organizationRepositoriesQuery = GetOrganizationRepositoriesQuery(name: username)
     }
     
     // MARK: - Lifecycle

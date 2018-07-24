@@ -20,7 +20,7 @@ class GetUserRepositoriesOperation: AsynchronousOperation, ResultGeneratingOpera
     init(username: String, onComplete: @escaping Completion) {
         self.onComplete = onComplete
         self.username = username
-        self.userRepositoriesQuery = GetUserRepositoriesQuery(name: username)
+        userRepositoriesQuery = GetUserRepositoriesQuery(name: username)
     }
     
     // MARK: - Lifecycle
