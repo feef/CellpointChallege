@@ -14,7 +14,21 @@ class RepositoriesListViewController: ItemsListViewController<UITableViewCell, R
     
     init(repositories: [Repository]) {
         // TODO: do grouping
-        super.init(groupedModels: [("all", repositories)], cellGenerator: RepositoryTableViewCellGenerator().wrapped)
+        let repositoriesSortedByStargazers = repositories.sorted {
+            return $0.stargazersCount > $1.stargazersCount
+        }
+        let repositoriesGroupedByLanguage = repositoriesSortedByStargazers.reduce([String: [Repository]]()) { aggregate, repository in
+            let language = repository.language
+            var updatedAggregate = aggregate
+            var repositoryArray = aggregate[language] ?? [Repository]()
+            repositoryArray.append(repository)
+            updatedAggregate[language] = repositoryArray
+            return updatedAggregate
+        }
+        let repositoriesSortedByLanguage = repositoriesGroupedByLanguage.sorted {
+            return $0.value.count > $1.value.count
+        }
+        super.init(groupedModels: repositoriesSortedByLanguage, cellGenerator: RepositoryTableViewCellGenerator().wrapped)
     }
     
     required init?(coder aDecoder: NSCoder) {
