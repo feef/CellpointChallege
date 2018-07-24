@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserSearchViewController" customModule="CellpointChallenge" customModuleProvider="target">
             <connections>
+                <outlet property="continueButton" destination="SJT-N7-zbb" id="0bv-JX-9ej"/>
                 <outlet property="userTypeSegmentedControl" destination="cBG-6h-Ber" id="hm0-lU-wh5"/>
                 <outlet property="usernameTextField" destination="S35-fB-dvb" id="rPy-DJ-pDy"/>
                 <outlet property="view" destination="iN0-l3-epB" id="7Gz-Wl-wK7"/>

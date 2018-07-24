@@ -28,6 +28,7 @@
 		48529AFF210676B40033D140 /* UserSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48529AFE210676B40033D140 /* UserSearchViewController.xib */; };
 		48529B04210680210033D140 /* PlistReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529B03210680210033D140 /* PlistReader.swift */; };
 		48529B0721071D060033D140 /* AuthorizationValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529B0621071D060033D140 /* AuthorizationValues.swift */; };
+		48529B09210724700033D140 /* Private.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48529B08210724700033D140 /* Private.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		48529AFE210676B40033D140 /* UserSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserSearchViewController.xib; sourceTree = "<group>"; };
 		48529B03210680210033D140 /* PlistReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistReader.swift; sourceTree = "<group>"; };
 		48529B0621071D060033D140 /* AuthorizationValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationValues.swift; sourceTree = "<group>"; };
+		48529B08210724700033D140 /* Private.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Private.plist; sourceTree = "<group>"; };
 		52CC7BBFEC853BB35DAF1957 /* Pods-CellpointChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CellpointChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CellpointChallenge/Pods-CellpointChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		ED89268D41EC1E3C09203C29 /* Pods-CellpointChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CellpointChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-CellpointChallenge/Pods-CellpointChallenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +93,7 @@
 		48529AB52105DDAA0033D140 /* CellpointChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				48529B08210724700033D140 /* Private.plist */,
 				48529AB62105DDAA0033D140 /* AppDelegate.swift */,
 				48529ABD2105DDAC0033D140 /* Assets.xcassets */,
 				48529AF5210617C90033D140 /* Extensions */,
@@ -260,6 +263,7 @@
 			files = (
 				48529AD32105FE1E0033D140 /* RepositoryDetails.graphql in Resources */,
 				48529ACC2105F6050033D140 /* UserRepositories.graphql in Resources */,
+				48529B09210724700033D140 /* Private.plist in Resources */,
 				48529AD02105FB260033D140 /* OrganizationRepositories.graphql in Resources */,
 				48529AFF210676B40033D140 /* UserSearchViewController.xib in Resources */,
 				48529AC12105DDAC0033D140 /* LaunchScreen.storyboard in Resources */,

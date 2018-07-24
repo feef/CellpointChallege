@@ -71,18 +71,20 @@ class UserSearchViewController: UIViewController {
         continueButton.isEnabled = false
         
         let onComplete: (OperationResult<[Repository]>) -> Void = { result in
-            defer {
-                self.continueButton.isEnabled = true
-            }
-            switch result {
-                case .failure:
-                    let alert = UIAlertController(title: "Could not find user", message: "Please input a valid username and user type combination", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .default))
-                    self.present(alert, animated: true)
-                    // TODO: Add debug log
-                case .success(let repositories):
-                    // TODO: Push view controller showing list of repos
-                    NSLog("\(repositories)")
+            DispatchQueue.main.async {
+                defer {
+                    self.continueButton.isEnabled = true
+                }
+                switch result {
+                    case .failure:
+                        let alert = UIAlertController(title: "Could not find user", message: "Please input a valid username and user type combination", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .default))
+                        self.present(alert, animated: true)
+                        // TODO: Add debug log
+                    case .success(let repositories):
+                        // TODO: Push view controller showing list of repos
+                        NSLog("\(repositories)")
+                }
             }
         }
         
