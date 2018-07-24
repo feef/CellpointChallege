@@ -4,7 +4,7 @@ import Apollo
 
 public final class GetOrganizationRepositoriesQuery: GraphQLQuery {
   public static let operationString =
-    "query GetOrganizationRepositories($name: String!) {\n  organization(login: $name) {\n    __typename\n    name\n    repositories(first: 10) {\n      __typename\n      nodes {\n        __typename\n        name\n        owner {\n          __typename\n          login\n        }\n      }\n    }\n  }\n}"
+    "query GetOrganizationRepositories($name: String!) {\n  organization(login: $name) {\n    __typename\n    name\n    repositories(first: 100) {\n      __typename\n      nodes {\n        __typename\n        name\n        stargazers {\n          __typename\n          totalCount\n        }\n        primaryLanguage {\n          __typename\n          name\n        }\n        owner {\n          __typename\n          login\n        }\n      }\n    }\n  }\n}"
 
   public var name: String
 
@@ -49,7 +49,7 @@ public final class GetOrganizationRepositoriesQuery: GraphQLQuery {
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLField("name", type: .scalar(String.self)),
-        GraphQLField("repositories", arguments: ["first": 10], type: .nonNull(.object(Repository.selections))),
+        GraphQLField("repositories", arguments: ["first": 100], type: .nonNull(.object(Repository.selections))),
       ]
 
       public var snapshot: Snapshot
@@ -134,6 +134,8 @@ public final class GetOrganizationRepositoriesQuery: GraphQLQuery {
           public static let selections: [GraphQLSelection] = [
             GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
             GraphQLField("name", type: .nonNull(.scalar(String.self))),
+            GraphQLField("stargazers", type: .nonNull(.object(Stargazer.selections))),
+            GraphQLField("primaryLanguage", type: .object(PrimaryLanguage.selections)),
             GraphQLField("owner", type: .nonNull(.object(Owner.selections))),
           ]
 
@@ -143,8 +145,8 @@ public final class GetOrganizationRepositoriesQuery: GraphQLQuery {
             self.snapshot = snapshot
           }
 
-          public init(name: String, owner: Owner) {
-            self.init(snapshot: ["__typename": "Repository", "name": name, "owner": owner.snapshot])
+          public init(name: String, stargazers: Stargazer, primaryLanguage: PrimaryLanguage? = nil, owner: Owner) {
+            self.init(snapshot: ["__typename": "Repository", "name": name, "stargazers": stargazers.snapshot, "primaryLanguage": primaryLanguage.flatMap { (value: PrimaryLanguage) -> Snapshot in value.snapshot }, "owner": owner.snapshot])
           }
 
           public var __typename: String {
@@ -166,6 +168,26 @@ public final class GetOrganizationRepositoriesQuery: GraphQLQuery {
             }
           }
 
+          /// A list of users who have starred this starrable.
+          public var stargazers: Stargazer {
+            get {
+              return Stargazer(snapshot: snapshot["stargazers"]! as! Snapshot)
+            }
+            set {
+              snapshot.updateValue(newValue.snapshot, forKey: "stargazers")
+            }
+          }
+
+          /// The primary language of the repository's code.
+          public var primaryLanguage: PrimaryLanguage? {
+            get {
+              return (snapshot["primaryLanguage"] as? Snapshot).flatMap { PrimaryLanguage(snapshot: $0) }
+            }
+            set {
+              snapshot.updateValue(newValue?.snapshot, forKey: "primaryLanguage")
+            }
+          }
+
           /// The User owner of the repository.
           public var owner: Owner {
             get {
@@ -173,6 +195,82 @@ public final class GetOrganizationRepositoriesQuery: GraphQLQuery {
             }
             set {
               snapshot.updateValue(newValue.snapshot, forKey: "owner")
+            }
+          }
+
+          public struct Stargazer: GraphQLSelectionSet {
+            public static let possibleTypes = ["StargazerConnection"]
+
+            public static let selections: [GraphQLSelection] = [
+              GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+              GraphQLField("totalCount", type: .nonNull(.scalar(Int.self))),
+            ]
+
+            public var snapshot: Snapshot
+
+            public init(snapshot: Snapshot) {
+              self.snapshot = snapshot
+            }
+
+            public init(totalCount: Int) {
+              self.init(snapshot: ["__typename": "StargazerConnection", "totalCount": totalCount])
+            }
+
+            public var __typename: String {
+              get {
+                return snapshot["__typename"]! as! String
+              }
+              set {
+                snapshot.updateValue(newValue, forKey: "__typename")
+              }
+            }
+
+            /// Identifies the total count of items in the connection.
+            public var totalCount: Int {
+              get {
+                return snapshot["totalCount"]! as! Int
+              }
+              set {
+                snapshot.updateValue(newValue, forKey: "totalCount")
+              }
+            }
+          }
+
+          public struct PrimaryLanguage: GraphQLSelectionSet {
+            public static let possibleTypes = ["Language"]
+
+            public static let selections: [GraphQLSelection] = [
+              GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+              GraphQLField("name", type: .nonNull(.scalar(String.self))),
+            ]
+
+            public var snapshot: Snapshot
+
+            public init(snapshot: Snapshot) {
+              self.snapshot = snapshot
+            }
+
+            public init(name: String) {
+              self.init(snapshot: ["__typename": "Language", "name": name])
+            }
+
+            public var __typename: String {
+              get {
+                return snapshot["__typename"]! as! String
+              }
+              set {
+                snapshot.updateValue(newValue, forKey: "__typename")
+              }
+            }
+
+            /// The name of the current language.
+            public var name: String {
+              get {
+                return snapshot["name"]! as! String
+              }
+              set {
+                snapshot.updateValue(newValue, forKey: "name")
+              }
             }
           }
 
@@ -329,7 +427,7 @@ public final class RepositoryDetailsQuery: GraphQLQuery {
 
 public final class GetUserRepositoriesQuery: GraphQLQuery {
   public static let operationString =
-    "query GetUserRepositories($name: String!) {\n  user(login: $name) {\n    __typename\n    name\n    repositories(first: 10) {\n      __typename\n      nodes {\n        __typename\n        name\n        owner {\n          __typename\n          login\n        }\n      }\n    }\n  }\n}"
+    "query GetUserRepositories($name: String!) {\n  user(login: $name) {\n    __typename\n    name\n    repositories(first: 100) {\n      __typename\n      nodes {\n        __typename\n        name\n        stargazers {\n          __typename\n          totalCount\n        }\n        primaryLanguage {\n          __typename\n          name\n        }\n        owner {\n          __typename\n          login\n        }\n      }\n    }\n  }\n}"
 
   public var name: String
 
@@ -374,7 +472,7 @@ public final class GetUserRepositoriesQuery: GraphQLQuery {
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLField("name", type: .scalar(String.self)),
-        GraphQLField("repositories", arguments: ["first": 10], type: .nonNull(.object(Repository.selections))),
+        GraphQLField("repositories", arguments: ["first": 100], type: .nonNull(.object(Repository.selections))),
       ]
 
       public var snapshot: Snapshot
@@ -459,6 +557,8 @@ public final class GetUserRepositoriesQuery: GraphQLQuery {
           public static let selections: [GraphQLSelection] = [
             GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
             GraphQLField("name", type: .nonNull(.scalar(String.self))),
+            GraphQLField("stargazers", type: .nonNull(.object(Stargazer.selections))),
+            GraphQLField("primaryLanguage", type: .object(PrimaryLanguage.selections)),
             GraphQLField("owner", type: .nonNull(.object(Owner.selections))),
           ]
 
@@ -468,8 +568,8 @@ public final class GetUserRepositoriesQuery: GraphQLQuery {
             self.snapshot = snapshot
           }
 
-          public init(name: String, owner: Owner) {
-            self.init(snapshot: ["__typename": "Repository", "name": name, "owner": owner.snapshot])
+          public init(name: String, stargazers: Stargazer, primaryLanguage: PrimaryLanguage? = nil, owner: Owner) {
+            self.init(snapshot: ["__typename": "Repository", "name": name, "stargazers": stargazers.snapshot, "primaryLanguage": primaryLanguage.flatMap { (value: PrimaryLanguage) -> Snapshot in value.snapshot }, "owner": owner.snapshot])
           }
 
           public var __typename: String {
@@ -491,6 +591,26 @@ public final class GetUserRepositoriesQuery: GraphQLQuery {
             }
           }
 
+          /// A list of users who have starred this starrable.
+          public var stargazers: Stargazer {
+            get {
+              return Stargazer(snapshot: snapshot["stargazers"]! as! Snapshot)
+            }
+            set {
+              snapshot.updateValue(newValue.snapshot, forKey: "stargazers")
+            }
+          }
+
+          /// The primary language of the repository's code.
+          public var primaryLanguage: PrimaryLanguage? {
+            get {
+              return (snapshot["primaryLanguage"] as? Snapshot).flatMap { PrimaryLanguage(snapshot: $0) }
+            }
+            set {
+              snapshot.updateValue(newValue?.snapshot, forKey: "primaryLanguage")
+            }
+          }
+
           /// The User owner of the repository.
           public var owner: Owner {
             get {
@@ -498,6 +618,82 @@ public final class GetUserRepositoriesQuery: GraphQLQuery {
             }
             set {
               snapshot.updateValue(newValue.snapshot, forKey: "owner")
+            }
+          }
+
+          public struct Stargazer: GraphQLSelectionSet {
+            public static let possibleTypes = ["StargazerConnection"]
+
+            public static let selections: [GraphQLSelection] = [
+              GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+              GraphQLField("totalCount", type: .nonNull(.scalar(Int.self))),
+            ]
+
+            public var snapshot: Snapshot
+
+            public init(snapshot: Snapshot) {
+              self.snapshot = snapshot
+            }
+
+            public init(totalCount: Int) {
+              self.init(snapshot: ["__typename": "StargazerConnection", "totalCount": totalCount])
+            }
+
+            public var __typename: String {
+              get {
+                return snapshot["__typename"]! as! String
+              }
+              set {
+                snapshot.updateValue(newValue, forKey: "__typename")
+              }
+            }
+
+            /// Identifies the total count of items in the connection.
+            public var totalCount: Int {
+              get {
+                return snapshot["totalCount"]! as! Int
+              }
+              set {
+                snapshot.updateValue(newValue, forKey: "totalCount")
+              }
+            }
+          }
+
+          public struct PrimaryLanguage: GraphQLSelectionSet {
+            public static let possibleTypes = ["Language"]
+
+            public static let selections: [GraphQLSelection] = [
+              GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+              GraphQLField("name", type: .nonNull(.scalar(String.self))),
+            ]
+
+            public var snapshot: Snapshot
+
+            public init(snapshot: Snapshot) {
+              self.snapshot = snapshot
+            }
+
+            public init(name: String) {
+              self.init(snapshot: ["__typename": "Language", "name": name])
+            }
+
+            public var __typename: String {
+              get {
+                return snapshot["__typename"]! as! String
+              }
+              set {
+                snapshot.updateValue(newValue, forKey: "__typename")
+              }
+            }
+
+            /// The name of the current language.
+            public var name: String {
+              get {
+                return snapshot["name"]! as! String
+              }
+              set {
+                snapshot.updateValue(newValue, forKey: "name")
+              }
             }
           }
 

@@ -1,9 +1,15 @@
 query GetOrganizationRepositories($name: String!) {
   organization(login: $name) {
     name
-    repositories(first: 10) {
+    repositories(first: 100) {
       nodes {
         name
+        stargazers {
+          totalCount
+        }
+        primaryLanguage {
+          name
+        }
         owner {
           login
         }
