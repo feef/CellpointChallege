@@ -32,9 +32,11 @@
 		48529B0B21072DEC0033D140 /* ItemsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529B0A21072DEC0033D140 /* ItemsListViewController.swift */; };
 		48529B0D2107308C0033D140 /* TableViewCellGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529B0C2107308C0033D140 /* TableViewCellGenerator.swift */; };
 		48529B0F210731A20033D140 /* AnyTableViewCellGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529B0E210731A20033D140 /* AnyTableViewCellGenerator.swift */; };
-		48529B11210734100033D140 /* RepositoryTableViewCellGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529B10210734100033D140 /* RepositoryTableViewCellGenerator.swift */; };
 		48529B13210734D00033D140 /* TableViewDataSourceWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529B12210734D00033D140 /* TableViewDataSourceWrapper.swift */; };
 		48529B17210754D70033D140 /* RepositoriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529B16210754D70033D140 /* RepositoriesListViewController.swift */; };
+		48529B1B21076EBF0033D140 /* RepositoryDetailsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529B1A21076EBF0033D140 /* RepositoryDetailsListViewController.swift */; };
+		48529B1D210772470033D140 /* StringTableViewCellGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529B1C210772470033D140 /* StringTableViewCellGenerator.swift */; };
+		48529B1F21078B8C0033D140 /* RepositoryTableViewCellGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529B1E21078B8C0033D140 /* RepositoryTableViewCellGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,9 +67,11 @@
 		48529B0A21072DEC0033D140 /* ItemsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsListViewController.swift; sourceTree = "<group>"; };
 		48529B0C2107308C0033D140 /* TableViewCellGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellGenerator.swift; sourceTree = "<group>"; };
 		48529B0E210731A20033D140 /* AnyTableViewCellGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTableViewCellGenerator.swift; sourceTree = "<group>"; };
-		48529B10210734100033D140 /* RepositoryTableViewCellGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCellGenerator.swift; sourceTree = "<group>"; };
 		48529B12210734D00033D140 /* TableViewDataSourceWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSourceWrapper.swift; sourceTree = "<group>"; };
 		48529B16210754D70033D140 /* RepositoriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesListViewController.swift; sourceTree = "<group>"; };
+		48529B1A21076EBF0033D140 /* RepositoryDetailsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailsListViewController.swift; sourceTree = "<group>"; };
+		48529B1C210772470033D140 /* StringTableViewCellGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTableViewCellGenerator.swift; sourceTree = "<group>"; };
+		48529B1E21078B8C0033D140 /* RepositoryTableViewCellGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCellGenerator.swift; sourceTree = "<group>"; };
 		52CC7BBFEC853BB35DAF1957 /* Pods-CellpointChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CellpointChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CellpointChallenge/Pods-CellpointChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		ED89268D41EC1E3C09203C29 /* Pods-CellpointChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CellpointChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-CellpointChallenge/Pods-CellpointChallenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,7 +109,6 @@
 		48529AB52105DDAA0033D140 /* CellpointChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				48529B08210724700033D140 /* Private.plist */,
 				48529AB62105DDAA0033D140 /* AppDelegate.swift */,
 				48529ABD2105DDAC0033D140 /* Assets.xcassets */,
 				48529AF5210617C90033D140 /* Extensions */,
@@ -115,6 +118,7 @@
 				48529B052106804D0033D140 /* Logic */,
 				48529AE7210612FE0033D140 /* Models */,
 				48529AF1210614BD0033D140 /* Operations */,
+				48529B08210724700033D140 /* Private.plist */,
 				48529AF2210614C80033D140 /* Protocols */,
 				48529B0221067EE10033D140 /* ViewControllers */,
 			);
@@ -204,6 +208,7 @@
 			children = (
 				48529B0A21072DEC0033D140 /* ItemsListViewController.swift */,
 				48529B16210754D70033D140 /* RepositoriesListViewController.swift */,
+				48529B1A21076EBF0033D140 /* RepositoryDetailsListViewController.swift */,
 			);
 			path = ItemLists;
 			sourceTree = "<group>";
@@ -212,7 +217,8 @@
 			isa = PBXGroup;
 			children = (
 				48529B0E210731A20033D140 /* AnyTableViewCellGenerator.swift */,
-				48529B10210734100033D140 /* RepositoryTableViewCellGenerator.swift */,
+				48529B1E21078B8C0033D140 /* RepositoryTableViewCellGenerator.swift */,
+				48529B1C210772470033D140 /* StringTableViewCellGenerator.swift */,
 			);
 			path = CellGenerators;
 			sourceTree = "<group>";
@@ -372,17 +378,19 @@
 				48529AED2106145A0033D140 /* OperationResult.swift in Sources */,
 				48529B0D2107308C0033D140 /* TableViewCellGenerator.swift in Sources */,
 				48529AFD210674ED0033D140 /* UserSearchViewController.swift in Sources */,
-				48529B11210734100033D140 /* RepositoryTableViewCellGenerator.swift in Sources */,
 				48529AF921061ED00033D140 /* GetRepositoryDetailsOperation.swift in Sources */,
 				48529AE6210611900033D140 /* RepositoryMetadata.swift in Sources */,
 				48529B0721071D060033D140 /* AuthorizationValues.swift in Sources */,
 				48529AF42106175F0033D140 /* ApolloClient.swift in Sources */,
+				48529B1F21078B8C0033D140 /* RepositoryTableViewCellGenerator.swift in Sources */,
 				48529AE9210613F40033D140 /* GetUserRepositoriesOperation.swift in Sources */,
 				48529AF0210614B30033D140 /* AsynchronousOperation.swift in Sources */,
+				48529B1D210772470033D140 /* StringTableViewCellGenerator.swift in Sources */,
 				48529B17210754D70033D140 /* RepositoriesListViewController.swift in Sources */,
 				48529AEB2106141D0033D140 /* ResultGeneratingOperation.swift in Sources */,
 				48529B04210680210033D140 /* PlistReader.swift in Sources */,
 				48529AB72105DDAA0033D140 /* AppDelegate.swift in Sources */,
+				48529B1B21076EBF0033D140 /* RepositoryDetailsListViewController.swift in Sources */,
 				48529B0F210731A20033D140 /* AnyTableViewCellGenerator.swift in Sources */,
 				48529AE421060F0B0033D140 /* Repository.swift in Sources */,
 				48529AFB2106233D0033D140 /* API.swift in Sources */,

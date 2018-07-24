@@ -28,13 +28,12 @@ class GetRespositoryDetailsOperation: AsynchronousOperation, ResultGeneratingOpe
                 self.onComplete(completionResult)
             }
             
-            guard let repository = result?.data?.repository,
-                let description = repository.description
-            else {
+            guard let repository = result?.data?.repository else {
                 completionResult = .failure(error)
                 return
             }
             
+            let description = repository.description
             let metadata = RepositoryMetadata.new(id: repository.id, repositoryDescription: description)
             completionResult = .success(metadata)
         }

@@ -16,7 +16,6 @@ class Repository: Object {
     @objc dynamic var ownerName = ""
     @objc dynamic var language = ""
     @objc dynamic var stargazersCount = 0
-    @objc dynamic var metadata: RepositoryMetadata?
     
     override static func primaryKey() -> String? {
         return "realmID"

@@ -15,7 +15,7 @@ class ItemsListViewController<CellType: UITableViewCell, ModelType>: UIViewContr
     
     // MARK - Init
     
-    init(groupedModels: [(String, [ModelType])], cellGenerator: AnyTableViewCellGenerator<CellType, ModelType>) {
+    init(groupedModels: [(String?, [ModelType])], cellGenerator: AnyTableViewCellGenerator<CellType, ModelType>) {
         dataSource = TableViewDataSourceWrapper(groupedModels: groupedModels, cellGenerator: cellGenerator)
         super.init(nibName: nil, bundle: nil)
     }

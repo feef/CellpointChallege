@@ -9,11 +9,11 @@
 import UIKit
 
 class TableViewDataSourceWrapper<CellType: UITableViewCell, ModelType>: NSObject, UITableViewDataSource {
-    private let sectionTitles: [String]
+    private let sectionTitles: [String?]
     private let modelArrays: [[ModelType]]
     private let cellGenerator: AnyTableViewCellGenerator<CellType, ModelType>
     
-    init(groupedModels: [(String, [ModelType])], cellGenerator: AnyTableViewCellGenerator<CellType, ModelType>) {
+    init(groupedModels: [(String?, [ModelType])], cellGenerator: AnyTableViewCellGenerator<CellType, ModelType>) {
         sectionTitles = groupedModels.map { $0.0 }
         self.modelArrays = groupedModels.map { $0.1 }
         self.cellGenerator = cellGenerator
@@ -52,7 +52,8 @@ class TableViewDataSourceWrapper<CellType: UITableViewCell, ModelType>: NSObject
     }
     
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return sectionTitles
+        let nonNilIndexTitles = sectionTitles.compactMap { $0 }
+        return nonNilIndexTitles.count == sectionTitles.count ? nonNilIndexTitles : nil
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

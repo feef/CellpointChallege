@@ -11,13 +11,13 @@ import RealmSwift
 
 class RepositoryMetadata: Object {
     @objc dynamic var id: String!
-    @objc dynamic var repositoryDescription: String!
+    @objc dynamic var repositoryDescription: String?
     
     override static func primaryKey() -> String? {
         return "id"
     }
     
-    static func new(id: String, repositoryDescription: String) -> RepositoryMetadata {
+    static func new(id: String, repositoryDescription: String?) -> RepositoryMetadata {
         let metadata = RepositoryMetadata()
         metadata.id = id
         metadata.repositoryDescription = repositoryDescription

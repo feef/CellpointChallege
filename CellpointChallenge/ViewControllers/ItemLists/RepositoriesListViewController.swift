@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class RepositoriesListViewController: ItemsListViewController<UITableViewCell, Repository>, UITableViewDelegate {
     
@@ -28,7 +29,8 @@ class RepositoriesListViewController: ItemsListViewController<UITableViewCell, R
         let repositoriesSortedByLanguage = repositoriesGroupedByLanguage.sorted {
             return $0.value.count > $1.value.count
         }
-        super.init(groupedModels: repositoriesSortedByLanguage, cellGenerator: RepositoryTableViewCellGenerator().wrapped)
+        let fullySortedRepositories = repositoriesSortedByLanguage.map { ($0 as String?, $1) }
+        super.init(groupedModels: fullySortedRepositories, cellGenerator: RepositoryTableViewCellGenerator.wrapped)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -50,10 +52,35 @@ class RepositoriesListViewController: ItemsListViewController<UITableViewCell, R
     // MARK: - UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let model = dataSource.modelAtIndexPath(indexPath) else {
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let repository = dataSource.modelAtIndexPath(indexPath) else {
             // TODO: Add debug log
             return
         }
-        // TODO: Use model to fetch repository details and show appropriate details screen
+        fetchAndShowDetails(of: repository)
+    }
+    
+    // MARK: - Detail displaying
+    
+    private func fetchAndShowDetails(of repository: Repository) {
+        tableView.isUserInteractionEnabled = false
+        let getDetailsOperation = GetRespositoryDetailsOperation(repositoryName: repository.name, ownerName: repository.ownerName) { result in
+            DispatchQueue.main.async {
+                defer {
+                    self.tableView.isUserInteractionEnabled = true
+                }
+                switch result {
+                    case .failure:
+                        let alert = UIAlertController(title: "Error", message: "We encountered an error getting additional details about this repository. Please try again.", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .default))
+                        self.present(alert, animated: true)
+                        // TODO: Add debug log
+                    case .success(let repositoryDetails):
+                        let repositoryDetailsListViewController = RepositoryDetailsListViewController(repository: repository, repositoryMetadata: repositoryDetails)
+                        self.navigationController?.pushViewController(repositoryDetailsListViewController, animated: true)
+                }
+            }
+        }
+        OperationQueue.main.addOperation(getDetailsOperation)
     }
 }
