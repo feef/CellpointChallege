@@ -29,6 +29,12 @@
 		48529B04210680210033D140 /* PlistReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529B03210680210033D140 /* PlistReader.swift */; };
 		48529B0721071D060033D140 /* AuthorizationValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529B0621071D060033D140 /* AuthorizationValues.swift */; };
 		48529B09210724700033D140 /* Private.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48529B08210724700033D140 /* Private.plist */; };
+		48529B0B21072DEC0033D140 /* ItemsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529B0A21072DEC0033D140 /* ItemsListViewController.swift */; };
+		48529B0D2107308C0033D140 /* TableViewCellGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529B0C2107308C0033D140 /* TableViewCellGenerator.swift */; };
+		48529B0F210731A20033D140 /* AnyTableViewCellGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529B0E210731A20033D140 /* AnyTableViewCellGenerator.swift */; };
+		48529B11210734100033D140 /* RepositoryTableViewCellGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529B10210734100033D140 /* RepositoryTableViewCellGenerator.swift */; };
+		48529B13210734D00033D140 /* TableViewDataSourceWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529B12210734D00033D140 /* TableViewDataSourceWrapper.swift */; };
+		48529B17210754D70033D140 /* RepositoriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529B16210754D70033D140 /* RepositoriesListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +62,12 @@
 		48529B03210680210033D140 /* PlistReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistReader.swift; sourceTree = "<group>"; };
 		48529B0621071D060033D140 /* AuthorizationValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationValues.swift; sourceTree = "<group>"; };
 		48529B08210724700033D140 /* Private.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Private.plist; sourceTree = "<group>"; };
+		48529B0A21072DEC0033D140 /* ItemsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsListViewController.swift; sourceTree = "<group>"; };
+		48529B0C2107308C0033D140 /* TableViewCellGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellGenerator.swift; sourceTree = "<group>"; };
+		48529B0E210731A20033D140 /* AnyTableViewCellGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTableViewCellGenerator.swift; sourceTree = "<group>"; };
+		48529B10210734100033D140 /* RepositoryTableViewCellGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCellGenerator.swift; sourceTree = "<group>"; };
+		48529B12210734D00033D140 /* TableViewDataSourceWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSourceWrapper.swift; sourceTree = "<group>"; };
+		48529B16210754D70033D140 /* RepositoriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesListViewController.swift; sourceTree = "<group>"; };
 		52CC7BBFEC853BB35DAF1957 /* Pods-CellpointChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CellpointChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CellpointChallenge/Pods-CellpointChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		ED89268D41EC1E3C09203C29 /* Pods-CellpointChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CellpointChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-CellpointChallenge/Pods-CellpointChallenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,6 +165,7 @@
 		48529AF2210614C80033D140 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				48529B0C2107308C0033D140 /* TableViewCellGenerator.swift */,
 				48529AEA2106141D0033D140 /* ResultGeneratingOperation.swift */,
 			);
 			path = Protocols;
@@ -169,6 +182,7 @@
 		48529B0221067EE10033D140 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				48529B18210757A50033D140 /* ItemLists */,
 				48529AFC210674ED0033D140 /* UserSearchViewController.swift */,
 				48529AFE210676B40033D140 /* UserSearchViewController.xib */,
 			);
@@ -179,8 +193,28 @@
 			isa = PBXGroup;
 			children = (
 				48529B03210680210033D140 /* PlistReader.swift */,
+				48529B19210757C10033D140 /* CellGenerators */,
+				48529B12210734D00033D140 /* TableViewDataSourceWrapper.swift */,
 			);
 			path = Logic;
+			sourceTree = "<group>";
+		};
+		48529B18210757A50033D140 /* ItemLists */ = {
+			isa = PBXGroup;
+			children = (
+				48529B0A21072DEC0033D140 /* ItemsListViewController.swift */,
+				48529B16210754D70033D140 /* RepositoriesListViewController.swift */,
+			);
+			path = ItemLists;
+			sourceTree = "<group>";
+		};
+		48529B19210757C10033D140 /* CellGenerators */ = {
+			isa = PBXGroup;
+			children = (
+				48529B0E210731A20033D140 /* AnyTableViewCellGenerator.swift */,
+				48529B10210734100033D140 /* RepositoryTableViewCellGenerator.swift */,
+			);
+			path = CellGenerators;
 			sourceTree = "<group>";
 		};
 		4F50071DC5CED436BFD9EC5B /* Frameworks */ = {
@@ -336,19 +370,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				48529AED2106145A0033D140 /* OperationResult.swift in Sources */,
+				48529B0D2107308C0033D140 /* TableViewCellGenerator.swift in Sources */,
 				48529AFD210674ED0033D140 /* UserSearchViewController.swift in Sources */,
+				48529B11210734100033D140 /* RepositoryTableViewCellGenerator.swift in Sources */,
 				48529AF921061ED00033D140 /* GetRepositoryDetailsOperation.swift in Sources */,
 				48529AE6210611900033D140 /* RepositoryMetadata.swift in Sources */,
 				48529B0721071D060033D140 /* AuthorizationValues.swift in Sources */,
 				48529AF42106175F0033D140 /* ApolloClient.swift in Sources */,
 				48529AE9210613F40033D140 /* GetUserRepositoriesOperation.swift in Sources */,
 				48529AF0210614B30033D140 /* AsynchronousOperation.swift in Sources */,
+				48529B17210754D70033D140 /* RepositoriesListViewController.swift in Sources */,
 				48529AEB2106141D0033D140 /* ResultGeneratingOperation.swift in Sources */,
 				48529B04210680210033D140 /* PlistReader.swift in Sources */,
 				48529AB72105DDAA0033D140 /* AppDelegate.swift in Sources */,
+				48529B0F210731A20033D140 /* AnyTableViewCellGenerator.swift in Sources */,
 				48529AE421060F0B0033D140 /* Repository.swift in Sources */,
 				48529AFB2106233D0033D140 /* API.swift in Sources */,
+				48529B13210734D00033D140 /* TableViewDataSourceWrapper.swift in Sources */,
 				48529AF721061E6B0033D140 /* GetOrganizationRepositoriesOperation.swift in Sources */,
+				48529B0B21072DEC0033D140 /* ItemsListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

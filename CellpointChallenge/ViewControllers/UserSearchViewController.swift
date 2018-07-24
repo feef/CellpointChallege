@@ -82,8 +82,9 @@ class UserSearchViewController: UIViewController {
                         self.present(alert, animated: true)
                         // TODO: Add debug log
                     case .success(let repositories):
-                        // TODO: Push view controller showing list of repos
-                        NSLog("\(repositories)")
+                        let repositoriesListViewController = RepositoriesListViewController(repositories: repositories)
+                        repositoriesListViewController.title = username
+                        self.navigationController?.pushViewController(repositoriesListViewController, animated: true)
                 }
             }
         }
