@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserSearchViewController" customModule="CellpointChallenge" customModuleProvider="target">
+            <connections>
+                <outlet property="userTypeSegmentedControl" destination="cBG-6h-Ber" id="hm0-lU-wh5"/>
+                <outlet property="usernameTextField" destination="S35-fB-dvb" id="rPy-DJ-pDy"/>
+                <outlet property="view" destination="iN0-l3-epB" id="7Gz-Wl-wK7"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="1kb-vW-PsP">
+                    <rect key="frame" x="40" y="60" width="295" height="120"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User or Organization name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S35-fB-dvb">
+                            <rect key="frame" x="0.0" y="0.0" width="295" height="30"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cBG-6h-Ber">
+                            <rect key="frame" x="0.0" y="46" width="295" height="29"/>
+                            <segments>
+                                <segment title="User"/>
+                                <segment title="Organization"/>
+                            </segments>
+                        </segmentedControl>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJT-N7-zbb">
+                            <rect key="frame" x="0.0" y="90" width="295" height="30"/>
+                            <state key="normal" title="Continue"/>
+                            <connections>
+                                <action selector="tappedContinue" destination="-1" eventType="touchUpInside" id="nzl-Yb-Yc2"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="width" priority="999" constant="295" id="Imx-WP-IWo"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="1kb-vW-PsP" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="NEM-lV-hKv"/>
+                <constraint firstItem="1kb-vW-PsP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="Srh-gS-qVg"/>
+                <constraint firstItem="1kb-vW-PsP" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="40" id="Zce-7w-tGa"/>
+                <constraint firstItem="1kb-vW-PsP" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="40" id="v44-Sa-2gN"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+</document>

@@ -12,7 +12,7 @@ import Apollo
 extension ApolloClient {
     static let shared: ApolloClient = {
         let configuration = URLSessionConfiguration.default
-        configuration.httpAdditionalHeaders = ["Authorization": "Bearer 49de0da694b20ec43c931780b1f419e36668db08"]
+        configuration.httpAdditionalHeaders = ["Authorization": "Bearer \(AuthorizationValues.githubToken)"]
         let url = URL(string: "https://api.github.com/graphql")!
         return ApolloClient(networkTransport: HTTPNetworkTransport(url: url, configuration: configuration))
     }()

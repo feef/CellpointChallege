@@ -9,7 +9,7 @@
 import Foundation
 import Apollo
 
-class GetUserRespositoriesOperation: AsynchronousOperation, ResultGeneratingOperation {
+class GetUserRepositoriesOperation: AsynchronousOperation, ResultGeneratingOperation {
     typealias Completion = (OperationResult<[Repository]>) -> Void
     internal let onComplete: Completion
     private let userRepositoriesQuery: GetUserRepositoriesQuery

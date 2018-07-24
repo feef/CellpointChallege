@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		25C246EEBA15D99949826A10 /* Pods_CellpointChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3466918C882B2ADA56ABCE64 /* Pods_CellpointChallenge.framework */; };
 		48529AB72105DDAA0033D140 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529AB62105DDAA0033D140 /* AppDelegate.swift */; };
-		48529AB92105DDAA0033D140 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529AB82105DDAA0033D140 /* ViewController.swift */; };
-		48529ABC2105DDAA0033D140 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48529ABA2105DDAA0033D140 /* Main.storyboard */; };
 		48529ABE2105DDAC0033D140 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48529ABD2105DDAC0033D140 /* Assets.xcassets */; };
 		48529AC12105DDAC0033D140 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48529ABF2105DDAC0033D140 /* LaunchScreen.storyboard */; };
 		48529ACC2105F6050033D140 /* UserRepositories.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48529ACB2105F6050033D140 /* UserRepositories.graphql */; };
@@ -26,14 +24,16 @@
 		48529AF721061E6B0033D140 /* GetOrganizationRepositoriesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529AF621061E6B0033D140 /* GetOrganizationRepositoriesOperation.swift */; };
 		48529AF921061ED00033D140 /* GetRepositoryDetailsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529AF821061ED00033D140 /* GetRepositoryDetailsOperation.swift */; };
 		48529AFB2106233D0033D140 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529AFA2106233D0033D140 /* API.swift */; };
+		48529AFD210674ED0033D140 /* UserSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529AFC210674ED0033D140 /* UserSearchViewController.swift */; };
+		48529AFF210676B40033D140 /* UserSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48529AFE210676B40033D140 /* UserSearchViewController.xib */; };
+		48529B04210680210033D140 /* PlistReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529B03210680210033D140 /* PlistReader.swift */; };
+		48529B0721071D060033D140 /* AuthorizationValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529B0621071D060033D140 /* AuthorizationValues.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3466918C882B2ADA56ABCE64 /* Pods_CellpointChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CellpointChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48529AB32105DDAA0033D140 /* CellpointChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CellpointChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48529AB62105DDAA0033D140 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		48529AB82105DDAA0033D140 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		48529ABB2105DDAA0033D140 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		48529ABD2105DDAC0033D140 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48529AC02105DDAC0033D140 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48529AC22105DDAC0033D140 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,6 +50,10 @@
 		48529AF621061E6B0033D140 /* GetOrganizationRepositoriesOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOrganizationRepositoriesOperation.swift; sourceTree = "<group>"; };
 		48529AF821061ED00033D140 /* GetRepositoryDetailsOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRepositoryDetailsOperation.swift; sourceTree = "<group>"; };
 		48529AFA2106233D0033D140 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = ../API.swift; sourceTree = "<group>"; };
+		48529AFC210674ED0033D140 /* UserSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchViewController.swift; sourceTree = "<group>"; };
+		48529AFE210676B40033D140 /* UserSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserSearchViewController.xib; sourceTree = "<group>"; };
+		48529B03210680210033D140 /* PlistReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistReader.swift; sourceTree = "<group>"; };
+		48529B0621071D060033D140 /* AuthorizationValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationValues.swift; sourceTree = "<group>"; };
 		52CC7BBFEC853BB35DAF1957 /* Pods-CellpointChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CellpointChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CellpointChallenge/Pods-CellpointChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		ED89268D41EC1E3C09203C29 /* Pods-CellpointChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CellpointChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-CellpointChallenge/Pods-CellpointChallenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,11 +97,11 @@
 				48529AD12105FB8C0033D140 /* GraphQuerying */,
 				48529AC22105DDAC0033D140 /* Info.plist */,
 				48529ABF2105DDAC0033D140 /* LaunchScreen.storyboard */,
-				48529ABA2105DDAA0033D140 /* Main.storyboard */,
+				48529B052106804D0033D140 /* Logic */,
 				48529AE7210612FE0033D140 /* Models */,
 				48529AF1210614BD0033D140 /* Operations */,
 				48529AF2210614C80033D140 /* Protocols */,
-				48529AB82105DDAA0033D140 /* ViewController.swift */,
+				48529B0221067EE10033D140 /* ViewControllers */,
 			);
 			path = CellpointChallenge;
 			sourceTree = "<group>";
@@ -116,6 +120,7 @@
 		48529AE7210612FE0033D140 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				48529B0621071D060033D140 /* AuthorizationValues.swift */,
 				48529AEC2106145A0033D140 /* OperationResult.swift */,
 				48529AEE2106147B0033D140 /* RealmModels */,
 			);
@@ -156,6 +161,23 @@
 				48529AF32106175F0033D140 /* ApolloClient.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		48529B0221067EE10033D140 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				48529AFC210674ED0033D140 /* UserSearchViewController.swift */,
+				48529AFE210676B40033D140 /* UserSearchViewController.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		48529B052106804D0033D140 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				48529B03210680210033D140 /* PlistReader.swift */,
+			);
+			path = Logic;
 			sourceTree = "<group>";
 		};
 		4F50071DC5CED436BFD9EC5B /* Frameworks */ = {
@@ -239,9 +261,9 @@
 				48529AD32105FE1E0033D140 /* RepositoryDetails.graphql in Resources */,
 				48529ACC2105F6050033D140 /* UserRepositories.graphql in Resources */,
 				48529AD02105FB260033D140 /* OrganizationRepositories.graphql in Resources */,
+				48529AFF210676B40033D140 /* UserSearchViewController.xib in Resources */,
 				48529AC12105DDAC0033D140 /* LaunchScreen.storyboard in Resources */,
 				48529ABE2105DDAC0033D140 /* Assets.xcassets in Resources */,
-				48529ABC2105DDAA0033D140 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,13 +332,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				48529AED2106145A0033D140 /* OperationResult.swift in Sources */,
+				48529AFD210674ED0033D140 /* UserSearchViewController.swift in Sources */,
 				48529AF921061ED00033D140 /* GetRepositoryDetailsOperation.swift in Sources */,
-				48529AB92105DDAA0033D140 /* ViewController.swift in Sources */,
 				48529AE6210611900033D140 /* RepositoryMetadata.swift in Sources */,
+				48529B0721071D060033D140 /* AuthorizationValues.swift in Sources */,
 				48529AF42106175F0033D140 /* ApolloClient.swift in Sources */,
 				48529AE9210613F40033D140 /* GetUserRepositoriesOperation.swift in Sources */,
 				48529AF0210614B30033D140 /* AsynchronousOperation.swift in Sources */,
 				48529AEB2106141D0033D140 /* ResultGeneratingOperation.swift in Sources */,
+				48529B04210680210033D140 /* PlistReader.swift in Sources */,
 				48529AB72105DDAA0033D140 /* AppDelegate.swift in Sources */,
 				48529AE421060F0B0033D140 /* Repository.swift in Sources */,
 				48529AFB2106233D0033D140 /* API.swift in Sources */,
@@ -327,14 +351,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		48529ABA2105DDAA0033D140 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				48529ABB2105DDAA0033D140 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		48529ABF2105DDAC0033D140 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
