@@ -13,16 +13,13 @@
 		48529AC12105DDAC0033D140 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48529ABF2105DDAC0033D140 /* LaunchScreen.storyboard */; };
 		48529ACC2105F6050033D140 /* UserRepositories.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48529ACB2105F6050033D140 /* UserRepositories.graphql */; };
 		48529AD02105FB260033D140 /* OrganizationRepositories.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48529ACF2105FB260033D140 /* OrganizationRepositories.graphql */; };
-		48529AD32105FE1E0033D140 /* RepositoryDetails.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 48529AD22105FE1E0033D140 /* RepositoryDetails.graphql */; };
 		48529AE421060F0B0033D140 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529AE321060F0B0033D140 /* Repository.swift */; };
-		48529AE6210611900033D140 /* RepositoryMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529AE5210611900033D140 /* RepositoryMetadata.swift */; };
 		48529AE9210613F40033D140 /* GetUserRepositoriesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529AE8210613F40033D140 /* GetUserRepositoriesOperation.swift */; };
 		48529AEB2106141D0033D140 /* ResultGeneratingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529AEA2106141D0033D140 /* ResultGeneratingOperation.swift */; };
 		48529AED2106145A0033D140 /* OperationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529AEC2106145A0033D140 /* OperationResult.swift */; };
 		48529AF0210614B30033D140 /* AsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529AEF210614B20033D140 /* AsynchronousOperation.swift */; };
 		48529AF42106175F0033D140 /* ApolloClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529AF32106175F0033D140 /* ApolloClient.swift */; };
 		48529AF721061E6B0033D140 /* GetOrganizationRepositoriesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529AF621061E6B0033D140 /* GetOrganizationRepositoriesOperation.swift */; };
-		48529AF921061ED00033D140 /* GetRepositoryDetailsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529AF821061ED00033D140 /* GetRepositoryDetailsOperation.swift */; };
 		48529AFB2106233D0033D140 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529AFA2106233D0033D140 /* API.swift */; };
 		48529AFD210674ED0033D140 /* UserSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48529AFC210674ED0033D140 /* UserSearchViewController.swift */; };
 		48529AFF210676B40033D140 /* UserSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48529AFE210676B40033D140 /* UserSearchViewController.xib */; };
@@ -48,16 +45,13 @@
 		48529AC22105DDAC0033D140 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48529ACB2105F6050033D140 /* UserRepositories.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UserRepositories.graphql; sourceTree = "<group>"; };
 		48529ACF2105FB260033D140 /* OrganizationRepositories.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = OrganizationRepositories.graphql; sourceTree = "<group>"; };
-		48529AD22105FE1E0033D140 /* RepositoryDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = RepositoryDetails.graphql; sourceTree = "<group>"; };
 		48529AE321060F0B0033D140 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
-		48529AE5210611900033D140 /* RepositoryMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryMetadata.swift; sourceTree = "<group>"; };
 		48529AE8210613F40033D140 /* GetUserRepositoriesOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserRepositoriesOperation.swift; sourceTree = "<group>"; };
 		48529AEA2106141D0033D140 /* ResultGeneratingOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultGeneratingOperation.swift; sourceTree = "<group>"; };
 		48529AEC2106145A0033D140 /* OperationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationResult.swift; sourceTree = "<group>"; };
 		48529AEF210614B20033D140 /* AsynchronousOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsynchronousOperation.swift; sourceTree = "<group>"; };
 		48529AF32106175F0033D140 /* ApolloClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloClient.swift; sourceTree = "<group>"; };
 		48529AF621061E6B0033D140 /* GetOrganizationRepositoriesOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOrganizationRepositoriesOperation.swift; sourceTree = "<group>"; };
-		48529AF821061ED00033D140 /* GetRepositoryDetailsOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRepositoryDetailsOperation.swift; sourceTree = "<group>"; };
 		48529AFA2106233D0033D140 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = ../API.swift; sourceTree = "<group>"; };
 		48529AFC210674ED0033D140 /* UserSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchViewController.swift; sourceTree = "<group>"; };
 		48529AFE210676B40033D140 /* UserSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserSearchViewController.xib; sourceTree = "<group>"; };
@@ -130,7 +124,6 @@
 			children = (
 				48529AFA2106233D0033D140 /* API.swift */,
 				48529ACF2105FB260033D140 /* OrganizationRepositories.graphql */,
-				48529AD22105FE1E0033D140 /* RepositoryDetails.graphql */,
 				48529ACB2105F6050033D140 /* UserRepositories.graphql */,
 			);
 			path = GraphQuerying;
@@ -150,7 +143,6 @@
 			isa = PBXGroup;
 			children = (
 				48529AE321060F0B0033D140 /* Repository.swift */,
-				48529AE5210611900033D140 /* RepositoryMetadata.swift */,
 			);
 			path = RealmModels;
 			sourceTree = "<group>";
@@ -160,7 +152,6 @@
 			children = (
 				48529AEF210614B20033D140 /* AsynchronousOperation.swift */,
 				48529AF621061E6B0033D140 /* GetOrganizationRepositoriesOperation.swift */,
-				48529AF821061ED00033D140 /* GetRepositoryDetailsOperation.swift */,
 				48529AE8210613F40033D140 /* GetUserRepositoriesOperation.swift */,
 			);
 			path = Operations;
@@ -196,8 +187,8 @@
 		48529B052106804D0033D140 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
-				48529B03210680210033D140 /* PlistReader.swift */,
 				48529B19210757C10033D140 /* CellGenerators */,
+				48529B03210680210033D140 /* PlistReader.swift */,
 				48529B12210734D00033D140 /* TableViewDataSourceWrapper.swift */,
 			);
 			path = Logic;
@@ -301,7 +292,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48529AD32105FE1E0033D140 /* RepositoryDetails.graphql in Resources */,
 				48529ACC2105F6050033D140 /* UserRepositories.graphql in Resources */,
 				48529B09210724700033D140 /* Private.plist in Resources */,
 				48529AD02105FB260033D140 /* OrganizationRepositories.graphql in Resources */,
@@ -378,8 +368,6 @@
 				48529AED2106145A0033D140 /* OperationResult.swift in Sources */,
 				48529B0D2107308C0033D140 /* TableViewCellGenerator.swift in Sources */,
 				48529AFD210674ED0033D140 /* UserSearchViewController.swift in Sources */,
-				48529AF921061ED00033D140 /* GetRepositoryDetailsOperation.swift in Sources */,
-				48529AE6210611900033D140 /* RepositoryMetadata.swift in Sources */,
 				48529B0721071D060033D140 /* AuthorizationValues.swift in Sources */,
 				48529AF42106175F0033D140 /* ApolloClient.swift in Sources */,
 				48529B1F21078B8C0033D140 /* RepositoryTableViewCellGenerator.swift in Sources */,

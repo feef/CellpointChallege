@@ -12,10 +12,12 @@ import Apollo
 class GetUserRepositoriesOperation: AsynchronousOperation, ResultGeneratingOperation {
     typealias Completion = (OperationResult<[Repository]>) -> Void
     internal let onComplete: Completion
+    private let username: String
     private let userRepositoriesQuery: GetUserRepositoriesQuery
     
     init(username: String, onComplete: @escaping Completion) {
         self.onComplete = onComplete
+        self.username = username
         self.userRepositoriesQuery = GetUserRepositoriesQuery(name: username)
     }
     
@@ -34,14 +36,16 @@ class GetUserRepositoriesOperation: AsynchronousOperation, ResultGeneratingOpera
             }
             
             let repositories: [Repository] = repositoryDatas.compactMap {
-                guard let name = $0?.name,
+                guard let id = $0?.id,
+                    let name = $0?.name,
                     let ownerName = $0?.owner.login,
                     let language = $0?.primaryLanguage?.name,
                     let stargazersCount = $0?.stargazers.totalCount
                 else {
                     return nil
                 }
-                return Repository.new(name: name, ownerName: ownerName, language: language, stargazersCount: stargazersCount)
+                let repository = Repository.new(id: id, name: name, repositoryDescription: $0?.description, ownerName: ownerName, language: language, stargazersCount: stargazersCount)
+                return repository
             }
             completionResult = .success(repositories)
         }

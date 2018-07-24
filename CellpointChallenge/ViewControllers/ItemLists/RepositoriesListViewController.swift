@@ -57,30 +57,7 @@ class RepositoriesListViewController: ItemsListViewController<UITableViewCell, R
             // TODO: Add debug log
             return
         }
-        fetchAndShowDetails(of: repository)
-    }
-    
-    // MARK: - Detail displaying
-    
-    private func fetchAndShowDetails(of repository: Repository) {
-        tableView.isUserInteractionEnabled = false
-        let getDetailsOperation = GetRespositoryDetailsOperation(repositoryName: repository.name, ownerName: repository.ownerName) { result in
-            DispatchQueue.main.async {
-                defer {
-                    self.tableView.isUserInteractionEnabled = true
-                }
-                switch result {
-                    case .failure:
-                        let alert = UIAlertController(title: "Error", message: "We encountered an error getting additional details about this repository. Please try again.", preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "OK", style: .default))
-                        self.present(alert, animated: true)
-                        // TODO: Add debug log
-                    case .success(let repositoryDetails):
-                        let repositoryDetailsListViewController = RepositoryDetailsListViewController(repository: repository, repositoryMetadata: repositoryDetails)
-                        self.navigationController?.pushViewController(repositoryDetailsListViewController, animated: true)
-                }
-            }
-        }
-        OperationQueue.main.addOperation(getDetailsOperation)
+        let repositoryDetailsListViewController = RepositoryDetailsListViewController(repository: repository)
+        self.navigationController?.pushViewController(repositoryDetailsListViewController, animated: true)
     }
 }

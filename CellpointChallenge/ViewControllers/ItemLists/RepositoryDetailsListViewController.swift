@@ -9,18 +9,13 @@
 import UIKit
 
 class RepositoryDetailsListViewController: ItemsListViewController<UITableViewCell, String> {
-    let repository: Repository
-    let repositoryMetadata: RepositoryMetadata
-    
     // MARK: - Init
     
-    init(repository: Repository, repositoryMetadata: RepositoryMetadata) {
-        self.repository = repository
-        self.repositoryMetadata = repositoryMetadata
+    init(repository: Repository) {
         let stringValues = [
             "name: \(repository.name)",
-            "id: \(repositoryMetadata.id!)",
-            "description: \(repositoryMetadata.repositoryDescription ?? "none")",
+            "id: \(repository.id!)",
+            "description: \(repository.repositoryDescription ?? "none")",
             "owner name: \(repository.ownerName)",
             "language: \(repository.language)",
             "stargazers count: \(repository.stargazersCount)"

@@ -4,6 +4,8 @@ query GetUserRepositories($name: String!) {
     repositories(first: 100) {
       nodes {
         name
+        description
+        id
         stargazers {
           totalCount
         }
